@@ -46,6 +46,7 @@
                 </form>
             </div>
         </div>
+        <br>
     </div>
 
     @if (isset($problemas))
@@ -81,7 +82,7 @@
                             <div class="row g-3 align-items-center">
                                 <div class="col-md-12">
                                     <a href="{{ route('problemasoluciones.edit', $problema->id) }}" type="submit"
-                                        class="btn" style="background:#f96332"><i class="fa fa-pen"></i></a>
+                                        class="btn" style="background:#f96332"><i class="fa fa-pencil"></i></a>
                                     <a href="{{ route('delete_problema_solucion', $problema->id) }}" type="submit"
                                         class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                 </div>

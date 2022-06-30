@@ -14,7 +14,7 @@ class ReglamentoController extends Controller
      */
     public function index()
     {
-        //
+        return view('reglamento.index');
     }
 
     /**

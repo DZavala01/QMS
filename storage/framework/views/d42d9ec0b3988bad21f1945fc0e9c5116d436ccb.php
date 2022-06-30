@@ -23,11 +23,10 @@
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('css/bootstrap.min.css')); ?>" rel="stylesheet">
-    <link href="<?php echo e(asset('css/now-ui-dashboard.min.css')); ?>" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <style id="" media="all">
         /* devanagari */
@@ -261,18 +260,18 @@
                         soluciones</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa fa-sticky-note"></span> Manuales y guías</a>
+                    <a href="<?php echo e(route('manualesguias.index')); ?>"><span class="fa fa-sticky-note"></span> Manuales y guías</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa fa-cogs"></span> Reglamento</a>
+                    <a href="<?php echo e(route('reglamento.index')); ?>"><span class="fa fa-cogs"></span> Reglamento</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa fa-paper-plane"></span> Capacitación</a>
+                    <a href="<?php echo e(route ('capacitacion.index')); ?>"><span class="fa fa-paper-plane"></span> Capacitación</a>
                 </li>
 
                 <li>
                     <a href="http://sige.cucsh.udg.mx/public/" target="_blank">
-                        <span class="fa fa-paper-plane"></span>Sige</a>
+                        <span class="fa fa-paper-plane"></span>SIGE</a>
                 </li>
 
                 <?php if(auth()->guard()->guest()): ?>
@@ -296,7 +295,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                            <a class="dropdown-item  text-dark" href="<?php echo e(route('logout')); ?>"
                                 onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 <?php echo e(__('Logout')); ?>
@@ -318,7 +317,9 @@
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
                 <div class="container-fluid">
-                    <h3>SGC - Sistema de Gestión de Calidad</h3>
+                    <a href="<?php echo e(route('welcome')); ?>">
+                        <h3>SGC - Sistema de Gestión de Calidad</h3>
+                    </a>
 
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -329,19 +330,22 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Home</a>
+                                <a class="nav-link" href="<?php echo e(route('welcome')); ?>">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Problemas y soluciones</a>
+                                <a class="nav-link" href="<?php echo e(route('problemasoluciones.index')); ?>">Problemas y soluciones</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Manuales y guías</a>
+                                <a class="nav-link" href="<?php echo e(route('manualesguias.index')); ?>">Manuales y guías</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Reglamento</a>
+                                <a class="nav-link" href="<?php echo e(route('reglamento.index')); ?>">Reglamento</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Capacitación</a>
+                                <a class="nav-link" href="<?php echo e(route ('capacitacion.index')); ?>">Capacitación</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://sige.cucsh.udg.mx/public/">SIGE</a>
                             </li>
 
                             <?php if(auth()->guard()->guest()): ?>
@@ -364,7 +368,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                                    <a class="dropdown-item  text-dark" href="<?php echo e(route('logout')); ?>"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         <?php echo e(__('Logout')); ?>
@@ -384,7 +388,6 @@
             </nav>
             <?php echo $__env->yieldContent('content'); ?>
         </div>
-
     </div>
 
     
